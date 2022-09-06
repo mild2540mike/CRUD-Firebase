@@ -37,6 +37,7 @@
 import {
     db
 } from "../firebaseDb";
+import Swal from 'sweetalert2';
 
 export default {
     data() {
@@ -45,18 +46,24 @@ export default {
         };
     },
     methods: {
-      async onFormSubmit(event) {
+        async onFormSubmit(event) {
             event.preventDefault();
             db.collection("users")
                 .add(this.user,
-                console.log(this.user)
-                
+                    console.log(this.user)
+
                 )
                 .then(() => {
-                    alert("User successfully created!");
+                    Swal.fire(
+                        'Good job!',
+                        'You clicked the button!',
+                        'success'
+                    )
                     this.user.name = "";
                     this.user.email = "";
                     this.user.phone = "";
+                    this.$router.push("/");
+
                 })
                 .catch((error) => {
                     console.log(error);
@@ -66,8 +73,8 @@ export default {
             const response = await fetch("https://randomuser.me/api/");
             const data = await response.json();
             this.$refs.name.value = data.results[0].name.first,
-            this.$refs.email.value = data.results[0].email,
-            this.$refs.phone.value = data.results[0].phone
+                this.$refs.email.value = data.results[0].email,
+                this.$refs.phone.value = data.results[0].phone
         }
     },
 };

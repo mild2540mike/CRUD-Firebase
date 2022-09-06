@@ -33,6 +33,7 @@
 import {
     db
 } from "../firebaseDb";
+import Swal from 'sweetalert2';
 
 export default {
     data() {
@@ -55,20 +56,29 @@ export default {
     },
     methods: {
         deleteUser(id) {
-            if (window.confirm("Do you really want to delete?")) {
-                db.collection("users")
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    db.collection("users")
                     .doc(id)
                     .delete()
-                    .then(() => {
-                        console.log("Document deleted!");
-                    })
-                    .catch((error) => {
-                        console.error(error);
-                    });
-            }
+                    Swal.fire(
+                        'Deleted!',
+                        'Your file has been deleted.',
+                        'success'
+                    )
+                }
+            })
         },
     },
-    
+
 };
 </script>
 
