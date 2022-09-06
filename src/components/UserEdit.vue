@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group grab-row-customize">
-                <button class="btn btn-primary btn-block">Update</button>
+                <button class="btn btn-primary btn-block btn-sm">Update</button>
             </div>
         </form>
     </div>

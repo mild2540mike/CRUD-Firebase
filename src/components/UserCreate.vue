@@ -25,8 +25,8 @@
             </div>
 
             <div class="col-12 grab-row-customize">
-                <button class="btn btn-primary btn-block btn-group-sm">Add User</button>
-                <button v-on:click="created()" class="btn btn-success btn-block btn-group-sm">Generate User</button>
+                <button class="btn btn-primary btn-block btn-group-sm btn-sm">Add User</button>
+                <button v-on:click="created()" class="btn btn-success btn-block btn-group-sm btn-sm">Generate User</button>
             </div>
         </form>
     </div>
