@@ -5,12 +5,12 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/list',
     name: 'add',
     component: () => import('../components/UserCreate'),
   },
   {
-    path: '/list',
+    path: '/',
     name: 'list',
     component: () => import('../components/UserList'),
   },
