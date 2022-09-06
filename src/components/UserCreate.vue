@@ -70,7 +70,12 @@ export default {
                 });
         },
         async created() {
-            const response = await fetch("https://randomuser.me/api/");
+            const response = await fetch('https://randomuser.me/api/', {
+                mode: 'cors',
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            });
             const data = await response.json();
             this.$refs.name.value = data.results[0].name.first,
                 this.$refs.email.value = data.results[0].email,
