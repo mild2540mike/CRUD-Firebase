@@ -66,7 +66,7 @@ export default {
                         'User successfully updated!',
                         'success'
                     )
-                    this.$router.push("/");
+                    this.$router.push("/views");
                 })
                 .catch((error) => {
                     console.log(error);

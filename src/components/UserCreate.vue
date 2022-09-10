@@ -62,7 +62,7 @@ export default {
                     this.user.name = "";
                     this.user.email = "";
                     this.user.phone = "";
-                    this.$router.push("/");
+                    this.$router.push("/views");
 
                 })
                 .catch((error) => {
