@@ -10,3 +10,4 @@ npm install
 ```
 npm run serve
 ```
+lernning Vue, firebase CRUD
